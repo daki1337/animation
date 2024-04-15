@@ -1,0 +1,142 @@
+.wrapper{
+    background-color: beige;
+    height: 90vh;
+position: relative;
+}
+.test{
+    width: 50px;
+    height: 50px;
+    background-color:fuchsia;
+    color: white;
+    padding: 5px;
+    font-size: 1.5em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: myAnim2 5s infinite;
+    /* animation-name: myAnim2;
+    animation-duration: 6s; */
+    /* animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none; */
+}
+
+
+@keyframes myAnim1{
+    from{
+left: 0;
+top: 0;
+    }
+    to{
+        left: 50%;
+        top: 50%;
+    }
+}
+.hero{
+width: 80px;
+height: 94px;
+background-image: url(./hero_spritesheet.png);
+background-position-y: -94px;
+animation: walk 1s steps(6) infinite, move 5s linear;
+background-position-y:-94px;
+background-repeat: no-repeat;
+position: absolute;
+transition: left 5s;
+left: 0;
+
+}
+@keyframes walk{
+    100%{ 
+    background-position-x: -480px;
+
+}
+}
+@keyframes move{
+    0%{left: 0;
+    }
+
+    100%{
+      left: 100%;
+    }
+  }
+.eye-blink{
+    transform-origin: 50% 100%;
+    animation:eye-blink-animation 1s linear 0s 1 normal both running;
+}
+.wrapper:hover>.hero{
+left:100%;
+} 
+
+.wrapper:hover>.test{
+    /* animation: myAnim2 5s; */
+    /* animation-name: myAnim2;
+    animation-duration: 6s; */
+    /* animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none; */
+}
+/* @keyframes myAnim2{
+    0%{
+left: 0;
+top: 0;
+
+background-color:aqua;
+    }
+    10%{
+        top: 0;
+        left: 50%;
+        background-color:red;
+    }
+    20%{
+        top: 50%;
+        left: 50%;
+        background-color: yellow;
+        opacity: 1;
+    }
+    30%{
+        top: 50%;
+        left: 0;
+        background-color:aqua;
+    }
+    100%{
+        left: 0%;
+        top: 0%;
+    }
+} */
+
+
+.flip-top {
+    transform-origin: 50% 50%;
+    animation: flip-top-animation 1s ease 0s 1 normal both running;
+}
+
+@keyframes flip-top-animation {
+    0% {
+        transform: perspective(400px) scaleX(1) translateZ(0) rotateX(-1turn);
+        animation-timing-function: ease-out;
+    }
+
+    40% {
+        transform: perspective(400px) scaleX(1) translateZ(150px) rotateX(-190deg);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: perspective(400px) scaleX(1) translateZ(150px) rotateX(-170deg);
+        animation-timing-function: ease-in;
+    }
+
+    80% {
+        transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translateZ(0) rotateX(0deg);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: perspective(400px) scaleX(1) translateZ(0) rotateX(0deg);
+        animation-timing-function: ease-in;
+    }
+}
